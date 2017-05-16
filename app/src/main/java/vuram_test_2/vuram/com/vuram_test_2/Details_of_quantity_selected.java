@@ -26,6 +26,8 @@ public class Details_of_quantity_selected extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         context = Details_of_quantity_selected.this;
         super.onCreate(savedInstanceState);
+        PopulateCountryDetails populateCountryDetails=new PopulateCountryDetails(this);
+        populateCountryDetails.getCountryDetailsFromAPI();
         setContentView(R.layout.activity_details);
         Button edit = (Button) findViewById(R.id.edit_details);
         edit.setOnClickListener(new View.OnClickListener() {

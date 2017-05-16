@@ -90,6 +90,7 @@ public class LoginPage extends AppCompatActivity {
                 httpResponse= Connectivity.makePostRequest(RestAPIURL.login,obj.toString(),httpClient);
                 if(httpResponse!=null) {
                     code = httpResponse.getStatusLine().getStatusCode();
+                    Log.d("good",code+"");
                     JSONObject jsonObject=new JSONObject(Connectivity.getJosnFromResponse(httpResponse));
                     String token=jsonObject.getString("auth_token");
                     Connectivity.storeAuthToken(LoginPage.this,token,Connectivity.Donor_Token);
